@@ -21,6 +21,7 @@
 		665374681DA0F72300F61411 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 665374641DA0F72300F61411 /* Montserrat-Regular.ttf */; };
 		66C3E2FC1DB44679008BFCF3 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C3E2FB1DB44679008BFCF3 /* SignupView.swift */; };
 		E42758B81B8BC41569F9C893 /* Pods_Eatey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8843C1780BED3E850B06822B /* Pods_Eatey.framework */; };
+		FD7BA89A1DB55BA1006E65EA /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD7BA8991DB55BA1006E65EA /* Security.framework */; };
 		FD9844DD1DB46A50004A1610 /* loadingscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = FD9844DC1DB46A50004A1610 /* loadingscreen.png */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		66C3E2FB1DB44679008BFCF3 /* SignupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		676750EE8EBEA366DF4B734E /* Pods-Eatey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eatey.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eatey/Pods-Eatey.release.xcconfig"; sourceTree = "<group>"; };
 		8843C1780BED3E850B06822B /* Pods_Eatey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eatey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD7BA8991DB55BA1006E65EA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		FD9844DC1DB46A50004A1610 /* loadingscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loadingscreen.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -51,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD7BA89A1DB55BA1006E65EA /* Security.framework in Frameworks */,
 				E42758B81B8BC41569F9C893 /* Pods_Eatey.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,6 +137,7 @@
 		66CC5DAF1DB406A20006182F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FD7BA8991DB55BA1006E65EA /* Security.framework */,
 				8843C1780BED3E850B06822B /* Pods_Eatey.framework */,
 			);
 			name = Frameworks;
