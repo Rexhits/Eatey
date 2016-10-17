@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6636DDD71DB4350100F13164 /* Dim.png in Resources */ = {isa = PBXBuildFile; fileRef = 6636DDD61DB4350100F13164 /* Dim.png */; };
+		665374491DA0F52B00F61411 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665374481DA0F52B00F61411 /* AppDelegate.swift */; };
+		6653744B1DA0F52B00F61411 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6653744A1DA0F52B00F61411 /* LoginView.swift */; };
+		6653744E1DA0F52B00F61411 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6653744C1DA0F52B00F61411 /* Main.storyboard */; };
+		665374501DA0F52B00F61411 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6653744F1DA0F52B00F61411 /* Assets.xcassets */; };
+		665374531DA0F52B00F61411 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 665374511DA0F52B00F61411 /* LaunchScreen.storyboard */; };
+		6653745E1DA0F5DC00F61411 /* eateyloginbackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 6653745C1DA0F5DC00F61411 /* eateyloginbackground.png */; };
+		6653745F1DA0F5DC00F61411 /* logobig.png in Resources */ = {isa = PBXBuildFile; fileRef = 6653745D1DA0F5DC00F61411 /* logobig.png */; };
+		665374651DA0F72300F61411 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 665374611DA0F72300F61411 /* Montserrat-Bold.ttf */; };
+		665374661DA0F72300F61411 /* montserrat-hairline_[allfont.net].ttf in Resources */ = {isa = PBXBuildFile; fileRef = 665374621DA0F72300F61411 /* montserrat-hairline_[allfont.net].ttf */; };
+		665374671DA0F72300F61411 /* montserrat-light_[allfont.net].ttf in Resources */ = {isa = PBXBuildFile; fileRef = 665374631DA0F72300F61411 /* montserrat-light_[allfont.net].ttf */; };
+		665374681DA0F72300F61411 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 665374641DA0F72300F61411 /* Montserrat-Regular.ttf */; };
+		66C3E2FC1DB44679008BFCF3 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C3E2FB1DB44679008BFCF3 /* SignupView.swift */; };
+		E42758B81B8BC41569F9C893 /* Pods_Eatey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8843C1780BED3E850B06822B /* Pods_Eatey.framework */; };
+		FD9844DD1DB46A50004A1610 /* loadingscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = FD9844DC1DB46A50004A1610 /* loadingscreen.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0A5A871E5EA5BC63194ABAF3 /* Pods-Eatey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eatey.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eatey/Pods-Eatey.debug.xcconfig"; sourceTree = "<group>"; };
+		6636DDD61DB4350100F13164 /* Dim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Dim.png; sourceTree = "<group>"; };
+		665374451DA0F52B00F61411 /* Eatey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eatey.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		665374481DA0F52B00F61411 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6653744A1DA0F52B00F61411 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		6653744D1DA0F52B00F61411 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6653744F1DA0F52B00F61411 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		665374521DA0F52B00F61411 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		665374541DA0F52B00F61411 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6653745C1DA0F5DC00F61411 /* eateyloginbackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eateyloginbackground.png; sourceTree = "<group>"; };
+		6653745D1DA0F5DC00F61411 /* logobig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logobig.png; sourceTree = "<group>"; };
+		665374611DA0F72300F61411 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		665374621DA0F72300F61411 /* montserrat-hairline_[allfont.net].ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "montserrat-hairline_[allfont.net].ttf"; sourceTree = "<group>"; };
+		665374631DA0F72300F61411 /* montserrat-light_[allfont.net].ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "montserrat-light_[allfont.net].ttf"; sourceTree = "<group>"; };
+		665374641DA0F72300F61411 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		66C3E2FB1DB44679008BFCF3 /* SignupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		676750EE8EBEA366DF4B734E /* Pods-Eatey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eatey.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eatey/Pods-Eatey.release.xcconfig"; sourceTree = "<group>"; };
+		8843C1780BED3E850B06822B /* Pods_Eatey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eatey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD9844DC1DB46A50004A1610 /* loadingscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loadingscreen.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		665374421DA0F52B00F61411 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E42758B81B8BC41569F9C893 /* Pods_Eatey.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0FF1AC10DA84E2091FA696F9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0A5A871E5EA5BC63194ABAF3 /* Pods-Eatey.debug.xcconfig */,
+				676750EE8EBEA366DF4B734E /* Pods-Eatey.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6653743C1DA0F52B00F61411 = {
+			isa = PBXGroup;
+			children = (
+				665374471DA0F52B00F61411 /* Eatey */,
+				665374461DA0F52B00F61411 /* Products */,
+				66CC5DAF1DB406A20006182F /* Frameworks */,
+				0FF1AC10DA84E2091FA696F9 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		665374461DA0F52B00F61411 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				665374451DA0F52B00F61411 /* Eatey.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		665374471DA0F52B00F61411 /* Eatey */ = {
+			isa = PBXGroup;
+			children = (
+				6653745B1DA0F5C700F61411 /* Assets */,
+				6653745A1DA0F55500F61411 /* SupportingFiles */,
+				6653744A1DA0F52B00F61411 /* LoginView.swift */,
+				66C3E2FB1DB44679008BFCF3 /* SignupView.swift */,
+				6653744C1DA0F52B00F61411 /* Main.storyboard */,
+			);
+			path = Eatey;
+			sourceTree = "<group>";
+		};
+		6653745A1DA0F55500F61411 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				665374481DA0F52B00F61411 /* AppDelegate.swift */,
+				6653744F1DA0F52B00F61411 /* Assets.xcassets */,
+				665374511DA0F52B00F61411 /* LaunchScreen.storyboard */,
+				665374541DA0F52B00F61411 /* Info.plist */,
+			);
+			name = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		6653745B1DA0F5C700F61411 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				FD9844DC1DB46A50004A1610 /* loadingscreen.png */,
+				665374601DA0F71200F61411 /* Fonts */,
+				6653745C1DA0F5DC00F61411 /* eateyloginbackground.png */,
+				6636DDD61DB4350100F13164 /* Dim.png */,
+				6653745D1DA0F5DC00F61411 /* logobig.png */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		665374601DA0F71200F61411 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				665374611DA0F72300F61411 /* Montserrat-Bold.ttf */,
+				665374621DA0F72300F61411 /* montserrat-hairline_[allfont.net].ttf */,
+				665374631DA0F72300F61411 /* montserrat-light_[allfont.net].ttf */,
+				665374641DA0F72300F61411 /* Montserrat-Regular.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		66CC5DAF1DB406A20006182F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8843C1780BED3E850B06822B /* Pods_Eatey.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		665374441DA0F52B00F61411 /* Eatey */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 665374571DA0F52B00F61411 /* Build configuration list for PBXNativeTarget "Eatey" */;
+			buildPhases = (
+				5C01C75ACECF8032EC7A70B3 /* [CP] Check Pods Manifest.lock */,
+				665374411DA0F52B00F61411 /* Sources */,
+				665374421DA0F52B00F61411 /* Frameworks */,
+				665374431DA0F52B00F61411 /* Resources */,
+				E9552D64E16662DF089748FF /* [CP] Embed Pods Frameworks */,
+				BB6F45288EC99916D0D6D878 /* [CP] Copy Pods Resources */,
+				66C3E2FA1DB43829008BFCF3 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Eatey;
+			productName = Eatey;
+			productReference = 665374451DA0F52B00F61411 /* Eatey.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6653743D1DA0F52B00F61411 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Alan Liu";
+				TargetAttributes = {
+					665374441DA0F52B00F61411 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 8U45AH5629;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 665374401DA0F52B00F61411 /* Build configuration list for PBXProject "Eatey" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6653743C1DA0F52B00F61411;
+			productRefGroup = 665374461DA0F52B00F61411 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				665374441DA0F52B00F61411 /* Eatey */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		665374431DA0F52B00F61411 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6636DDD71DB4350100F13164 /* Dim.png in Resources */,
+				665374681DA0F72300F61411 /* Montserrat-Regular.ttf in Resources */,
+				6653745F1DA0F5DC00F61411 /* logobig.png in Resources */,
+				6653745E1DA0F5DC00F61411 /* eateyloginbackground.png in Resources */,
+				665374661DA0F72300F61411 /* montserrat-hairline_[allfont.net].ttf in Resources */,
+				665374651DA0F72300F61411 /* Montserrat-Bold.ttf in Resources */,
+				665374531DA0F52B00F61411 /* LaunchScreen.storyboard in Resources */,
+				665374501DA0F52B00F61411 /* Assets.xcassets in Resources */,
+				FD9844DD1DB46A50004A1610 /* loadingscreen.png in Resources */,
+				665374671DA0F72300F61411 /* montserrat-light_[allfont.net].ttf in Resources */,
+				6653744E1DA0F52B00F61411 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5C01C75ACECF8032EC7A70B3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		66C3E2FA1DB43829008BFCF3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" daa150b3516f80271033e5bb0793e4b90a3f9363 fefb601a7d61004cdb74bc24590f559123d3a1e19a8c3be650f4fb87596f5ec2";
+		};
+		BB6F45288EC99916D0D6D878 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Eatey/Pods-Eatey-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9552D64E16662DF089748FF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Eatey/Pods-Eatey-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		665374411DA0F52B00F61411 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66C3E2FC1DB44679008BFCF3 /* SignupView.swift in Sources */,
+				6653744B1DA0F52B00F61411 /* LoginView.swift in Sources */,
+				665374491DA0F52B00F61411 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6653744C1DA0F52B00F61411 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6653744D1DA0F52B00F61411 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		665374511DA0F52B00F61411 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				665374521DA0F52B00F61411 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		665374551DA0F52B00F61411 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		665374561DA0F52B00F61411 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		665374581DA0F52B00F61411 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A5A871E5EA5BC63194ABAF3 /* Pods-Eatey.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 8U45AH5629;
+				INFOPLIST_FILE = Eatey/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rexwang.Eatey;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		665374591DA0F52B00F61411 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 676750EE8EBEA366DF4B734E /* Pods-Eatey.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 8U45AH5629;
+				INFOPLIST_FILE = Eatey/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rexwang.Eatey;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		665374401DA0F52B00F61411 /* Build configuration list for PBXProject "Eatey" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				665374551DA0F52B00F61411 /* Debug */,
+				665374561DA0F52B00F61411 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		665374571DA0F52B00F61411 /* Build configuration list for PBXNativeTarget "Eatey" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				665374581DA0F52B00F61411 /* Debug */,
+				665374591DA0F52B00F61411 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6653743D1DA0F52B00F61411 /* Project object */;
+}
