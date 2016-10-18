@@ -66,7 +66,7 @@ class LoginView: UIViewController, UITextFieldDelegate  {
         let package = ["email": usernameTextField.text!, "password": passwordTextField.text!]
         
         manager.post(url, parameters: package, progress: nil, success: { (task:URLSessionDataTask, response: Any?) in
-            let responseJson = JSON(response)
+            let responseJson = JSON(response as Any)
             for (key, subJson):(String, JSON) in responseJson {
                 print("Got response! \(key, subJson)")
             }

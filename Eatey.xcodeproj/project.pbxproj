@@ -22,6 +22,7 @@
 		66C3E2FC1DB44679008BFCF3 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C3E2FB1DB44679008BFCF3 /* SignupView.swift */; };
 		E42758B81B8BC41569F9C893 /* Pods_Eatey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8843C1780BED3E850B06822B /* Pods_Eatey.framework */; };
 		FD7BA89A1DB55BA1006E65EA /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD7BA8991DB55BA1006E65EA /* Security.framework */; };
+		FD90E4CE1DB5AB33008B0881 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD90E4CD1DB5AB33008B0881 /* Global.swift */; };
 		FD9844DD1DB46A50004A1610 /* loadingscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = FD9844DC1DB46A50004A1610 /* loadingscreen.png */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		676750EE8EBEA366DF4B734E /* Pods-Eatey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eatey.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eatey/Pods-Eatey.release.xcconfig"; sourceTree = "<group>"; };
 		8843C1780BED3E850B06822B /* Pods_Eatey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eatey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD7BA8991DB55BA1006E65EA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		FD90E4CD1DB5AB33008B0881 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		FD9844DC1DB46A50004A1610 /* loadingscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loadingscreen.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,6 +97,7 @@
 				6653745A1DA0F55500F61411 /* SupportingFiles */,
 				6653744A1DA0F52B00F61411 /* LoginView.swift */,
 				66C3E2FB1DB44679008BFCF3 /* SignupView.swift */,
+				FD90E4CD1DB5AB33008B0881 /* Global.swift */,
 				6653744C1DA0F52B00F61411 /* Main.storyboard */,
 			);
 			path = Eatey;
@@ -290,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD90E4CE1DB5AB33008B0881 /* Global.swift in Sources */,
 				66C3E2FC1DB44679008BFCF3 /* SignupView.swift in Sources */,
 				6653744B1DA0F52B00F61411 /* LoginView.swift in Sources */,
 				665374491DA0F52B00F61411 /* AppDelegate.swift in Sources */,

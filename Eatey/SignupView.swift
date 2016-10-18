@@ -30,6 +30,7 @@ class SignupView: UIViewController, UITextFieldDelegate   {
 
     }
     
+    @IBOutlet var errorLabel: UILabel!
     @IBOutlet weak var SignupStack: UIView!
     @IBOutlet weak var SignupButton: UIView!
     @IBOutlet weak var firstNameTextField: UITextField!
@@ -42,6 +43,15 @@ class SignupView: UIViewController, UITextFieldDelegate   {
     
     
     @IBAction func signupAct(_ sender: UIButton) {
+        if firstNameTextField.text!.isEmpty || lastNameTextField.text!.isEmpty || emailTextField.text!.isEmpty || passwordTextField.text!.isEmpty {
+            errorLabel.text = "Please fill up all the infomations"
+        }
+        else if passwordTextField.text != confirmPasswordTextField.text {
+            errorLabel.text = "Password confirmation failed, please try again"
+        }
+        else if !emailTextField.text!.isValidEmail() {
+            errorLabel.text = "Invalid Email Address, please try another one"
+        }
         let manager = AFHTTPSessionManager()
         manager.requestSerializer.setValue("application/x-www-form-urlencoded; charset=UTF-8", forHTTPHeaderField: "Content-Type")
         let url = "http://45.79.208.141:8000/api/register/"
@@ -49,7 +59,7 @@ class SignupView: UIViewController, UITextFieldDelegate   {
         
         
         manager.post(url, parameters: package, progress: nil, success: { (task:URLSessionDataTask, response: Any?) in
-            let responseJson = JSON(response)
+            let responseJson = JSON(response as Any)
             for (key, subJson):(String, JSON) in responseJson {
                 print("Got response! \(key, subJson)")
             }
