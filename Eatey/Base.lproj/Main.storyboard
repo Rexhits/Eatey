@@ -703,6 +703,7 @@
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
+                                                    <action selector="LogoutBtn:" destination="gID-bk-blI" eventType="touchUpInside" id="T1O-Ba-3z2"/>
                                                     <segue destination="BYZ-38-t0r" kind="showDetail" identifier="segueLogOut" action="showViewController:sender:" id="mY6-0E-Ccd"/>
                                                 </connections>
                                             </button>

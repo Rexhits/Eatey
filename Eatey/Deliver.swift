@@ -186,7 +186,7 @@ class Deliver: UIViewController, UITableViewDataSource, UITableViewDelegate, CLL
         func okHandler(alert: UIAlertAction!) {
             // Do something...
             isTakingOrder = true
-            SocketIOManager.sharedInstance.emit(event: "confirmation", message: String(describing: [myUsername, myUsername]))
+            SocketIOManager.sharedInstance.emit(event: "confirmation", message: String(describing: [myUsername, target]))
             SocketIOManager.sharedInstance.emit(event: "deliverer", message: String(describing: ["location" : ["latitude": location.coordinate.latitude, "longitude": location.coordinate.longitude]]))
             self.view.viewWithTag(15)?.isHidden = true
             self.view.viewWithTag(20)?.isHidden = false

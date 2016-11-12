@@ -8,6 +8,7 @@
 
 import UIKit
 import QuartzCore
+import Lockbox
 
 class Setting: UIViewController {
     
@@ -33,6 +34,9 @@ class Setting: UIViewController {
     @IBOutlet weak var notificationView: UIView!
     @IBOutlet weak var logoutView: UIView!
     
+    @IBAction func LogoutBtn(_ sender: UIButton) {
+        print("Logged Out! \(Lockbox.archiveObject(nil, forKey: "Token")))")
+    }
     
     
 }

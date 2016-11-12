@@ -46,7 +46,8 @@ class ConfirmSelection: UIViewController {
         SocketIOManager.sharedInstance.emit(event: "foodRequest", message: myUsername as! String)
         SocketIOManager.sharedInstance.postRequestHandler()
         let controller = superViewController as! Eat
-//        controller.quitCurrentOrder
+        controller.view.viewWithTag(5)?.isHidden = true
+        controller.view.viewWithTag(10)?.isHidden = false
     }
     
     override func viewDidLoad() {
