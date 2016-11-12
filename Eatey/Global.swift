@@ -24,6 +24,7 @@ var newEatOrder = eatOrder()
 
 var token = NSString()
 var username = NSString()
+var delivererlocation = [Double]()
 
 extension String {
     func isValidEmail() -> Bool {

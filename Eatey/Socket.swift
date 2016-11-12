@@ -46,8 +46,15 @@ class SocketIOManager: NSObject {
         }
         self.socket.on("deliverergo") { data, ack in
             print("deliverergo: \(data)")
+            let response = JSON(data as Any)
+            for i in response {
+                print("JSON: \(i)")
+            }
+//            let location = response.characters.split{$0 == ","}.map(String.init)
+//            delivererlocation.append(Double(location[0])!)
+//            delivererlocation.append(Double(location[1])!)
         }
     }
-    
+
 
 }

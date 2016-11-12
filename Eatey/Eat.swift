@@ -21,13 +21,13 @@ import CoreLocation
 
 class Eat: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
-    
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var quitCurrentOrder: UIButton!
     @IBOutlet weak var startAnOrder: UIButton!
     @IBOutlet weak var newOrderView: UIView!
+    var timer: Timer?
     @IBAction func quitCurrentOrder(_ sender: Any) {
         self.view.viewWithTag(5)?.isHidden = true
         self.view.viewWithTag(10)?.isHidden = false
@@ -50,6 +50,8 @@ class Eat: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        timer = Timer(fireAt: Date(), interval: 1, target: self, selector: #selector(showDelivererLocation), userInfo: nil, repeats: true)
+        
         containerView.layer.cornerRadius = 10.0
         containerView.layer.masksToBounds = true
         
@@ -70,7 +72,19 @@ class Eat: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
            self.tutorialPageViewController = tutorialPageViewController
        }
     }
-
+    
+    func showDelivererLocation() {
+        let droppin = MKPointAnnotation()
+        droppin.coordinate.latitude = delivererlocation[0]
+        droppin.coordinate.longitude = delivererlocation[1]
+        map.addAnnotation(droppin)
+        if myLocation != nil {
+            let center = CLLocationCoordinate2DMake((myLocation!.coordinate.latitude + delivererlocation[0]) / 2, (myLocation!.coordinate.longitude + delivererlocation[1]) / 2)
+            let span = MKCoordinateSpanMake(abs(myLocation!.coordinate.latitude - delivererlocation[0]) + 0.01, abs(myLocation!.coordinate.longitude - delivererlocation[1]) + 0.01)
+            let region = MKCoordinateRegionMake(center, span)
+            map.setRegion(region, animated: true)
+        }
+    }
     
     
     //Map Code
@@ -105,19 +119,7 @@ class Eat: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
         return annotationView
     }
     
-    func showLocation(latitude: Double, longitude: Double) {
-        let droppin = MKPointAnnotation()
-        droppin.coordinate.latitude = latitude
-        droppin.coordinate.longitude = longitude
-        map.addAnnotation(droppin)
-        if myLocation != nil {
-            let center = CLLocationCoordinate2DMake((myLocation!.coordinate.latitude + latitude) / 2, (myLocation!.coordinate.longitude + longitude) / 2)
-            let span = MKCoordinateSpanMake(abs(myLocation!.coordinate.latitude - latitude) + 0.01, abs(myLocation!.coordinate.longitude - longitude) + 0.01)
-            let region = MKCoordinateRegionMake(center, span)
-            map.setRegion(region, animated: true)
-        }
-    }
-    
+        
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         let location = locations.first!

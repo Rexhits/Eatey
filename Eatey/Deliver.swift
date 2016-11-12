@@ -149,7 +149,8 @@ class Deliver: UIViewController, UITableViewDataSource, UITableViewDelegate, CLL
         location = locations.first!
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, 1000, 1000)
         if isTakingOrder {
-            SocketIOManager.sharedInstance.emit(event: "deliverer", message: "\(location.coordinate.latitude),\(location.coordinate.longitude)")
+            let locationJSON = ["latitude": location.coordinate.latitude, "longitude": location.coordinate.longitude]
+            SocketIOManager.sharedInstance.emit(event: "deliverer", message: locationJSON)
         }
         map.setRegion(coordinateRegion, animated: true)
 //        locationManager?.stopUpdatingLocation()
