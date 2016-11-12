@@ -149,7 +149,7 @@ class Deliver: UIViewController, UITableViewDataSource, UITableViewDelegate, CLL
         location = locations.first!
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, 1000, 1000)
         if isTakingOrder {
-            SocketIOManager.sharedInstance.emit(event: "deliverer", message: String(describing: ["location" : ["latitude": location.coordinate.latitude, "longitude": location.coordinate.longitude]]))
+            SocketIOManager.sharedInstance.emit(event: "deliverer", message: "\(location.coordinate.latitude),\(location.coordinate.longitude)")
         }
         map.setRegion(coordinateRegion, animated: true)
 //        locationManager?.stopUpdatingLocation()
@@ -186,8 +186,8 @@ class Deliver: UIViewController, UITableViewDataSource, UITableViewDelegate, CLL
         func okHandler(alert: UIAlertAction!) {
             // Do something...
             isTakingOrder = true
-            SocketIOManager.sharedInstance.emit(event: "confirmation", message: String(describing: [myUsername, target]))
-            SocketIOManager.sharedInstance.emit(event: "deliverer", message: String(describing: ["location" : ["latitude": location.coordinate.latitude, "longitude": location.coordinate.longitude]]))
+            SocketIOManager.sharedInstance.emit(event: "confirmation", message: "\(myUsername),\(target)")
+//            SocketIOManager.sharedInstance.emit(event: "deliverer", message: "\(location.coordinate.latitude),\(location.coordinate.longitude)")
             self.view.viewWithTag(15)?.isHidden = true
             self.view.viewWithTag(20)?.isHidden = false
         }

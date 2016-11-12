@@ -43,6 +43,10 @@ class SocketIOManager: NSObject {
         self.socket.on("Order Taken") { data, ack in
             print("Order Taken: \(data)")
         }
+        self.socket.on("deliverergo") { data, ack in
+            print("deliverergo: \(data)")
+        }
     }
+    
 
 }
