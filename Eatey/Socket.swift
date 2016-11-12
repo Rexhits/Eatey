@@ -46,14 +46,14 @@ class SocketIOManager: NSObject {
             print("Order Taken: \(data)")
         }
         self.socket.on("deliverergo") { data, ack in
-            print("deliverergo: \(data)")
+//            print("deliverergo: \(data)")
             let response = JSON(data as Any)
-            for i in response {
-                print("JSON: \(i)")
+            for (key, subJson) in response {
+                let y = Double(subJson["longitude"].doubleValue)
+                let x = Double(subJson["latitude"].doubleValue)
+                delivererlocation = [x,y]
             }
-//            let location = response.characters.split{$0 == ","}.map(String.init)
-//            delivererlocation.append(Double(location[0])!)
-//            delivererlocation.append(Double(location[1])!)
+
         }
     }
 

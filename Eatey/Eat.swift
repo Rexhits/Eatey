@@ -28,6 +28,8 @@ class Eat: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     @IBOutlet weak var startAnOrder: UIButton!
     @IBOutlet weak var newOrderView: UIView!
     var timer: Timer?
+    let droppin = MKPointAnnotation()
+    
     @IBAction func quitCurrentOrder(_ sender: Any) {
         self.view.viewWithTag(5)?.isHidden = true
         self.view.viewWithTag(10)?.isHidden = false
@@ -50,7 +52,9 @@ class Eat: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        timer = Timer(fireAt: Date(), interval: 1, target: self, selector: #selector(showDelivererLocation), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(showDelivererLocation), userInfo: nil, repeats: true)
+        map.addAnnotation(droppin)
+        
         
         containerView.layer.cornerRadius = 10.0
         containerView.layer.masksToBounds = true
@@ -74,16 +78,19 @@ class Eat: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     }
     
     func showDelivererLocation() {
-        let droppin = MKPointAnnotation()
-        droppin.coordinate.latitude = delivererlocation[0]
-        droppin.coordinate.longitude = delivererlocation[1]
-        map.addAnnotation(droppin)
-        if myLocation != nil {
-            let center = CLLocationCoordinate2DMake((myLocation!.coordinate.latitude + delivererlocation[0]) / 2, (myLocation!.coordinate.longitude + delivererlocation[1]) / 2)
-            let span = MKCoordinateSpanMake(abs(myLocation!.coordinate.latitude - delivererlocation[0]) + 0.01, abs(myLocation!.coordinate.longitude - delivererlocation[1]) + 0.01)
-            let region = MKCoordinateRegionMake(center, span)
-            map.setRegion(region, animated: true)
+        print("CALLED")
+        if !delivererlocation.isEmpty {
+            droppin.coordinate.latitude = delivererlocation[0]
+            droppin.coordinate.longitude = delivererlocation[1]
         }
+        
+        
+//        if myLocation != nil {
+//            let center = CLLocationCoordinate2DMake((myLocation!.coordinate.latitude + delivererlocation[0]) / 2, (myLocation!.coordinate.longitude + delivererlocation[1]) / 2)
+//            let span = MKCoordinateSpanMake(abs(myLocation!.coordinate.latitude - delivererlocation[0]) + 0.01, abs(myLocation!.coordinate.longitude - delivererlocation[1]) + 0.01)
+//            let region = MKCoordinateRegionMake(center, span)
+//            map.setRegion(region, animated: true)
+//        }
     }
     
     
@@ -106,20 +113,23 @@ class Eat: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
         }
     }
     
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        let annotationView = MKAnnotationView()
-        if annotation.isKind(of: MKUserLocation.self) {
-            return nil
-        }
-        else {
-            let point = MKPointAnnotation()
-            annotationView.annotation = point
-        }
-        
-        return annotationView
-    }
+//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+//        let annotationView = MKAnnotationView()
+//        if annotation.isKind(of: MKUserLocation.self) {
+//            return nil
+//        }
+//        else {
+//            let point = MKPointAnnotation()
+//            annotationView.annotation = point
+//        }
+//        
+//        return annotationView
+//    }
     
-        
+//    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+//        showDelivererLocation()
+//    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         let location = locations.first!
@@ -128,6 +138,8 @@ class Eat: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
         map.setRegion(coordinateRegion, animated: true)
 //        locationManager?.stopUpdatingLocation()
 //        locationManager = nil
+        
+        
         map.showsUserLocation = true
     }
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
