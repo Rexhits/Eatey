@@ -65,7 +65,7 @@ class Deliver: UIViewController, UITableViewDataSource, UITableViewDelegate, CLL
     }
 
     
-    var locationManager: CLLocationManager?
+    let locationManager = CLLocationManager()
     
    
     override func viewDidLoad() {
@@ -88,12 +88,11 @@ class Deliver: UIViewController, UITableViewDataSource, UITableViewDelegate, CLL
 //        print(requests)
         seeAllRequestButton.layer.cornerRadius = 10.0
         seeAllRequestButton.layer.masksToBounds = true
-        locationManager = CLLocationManager()
-        locationManager!.delegate = self
+        locationManager.delegate = self
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
-            locationManager!.startUpdatingLocation()
+            locationManager.startUpdatingLocation()
         } else {
-            locationManager!.requestWhenInUseAuthorization()
+            locationManager.requestWhenInUseAuthorization()
         }
         self.view.viewWithTag(15)?.isHidden = false
         self.view.viewWithTag(20)?.isHidden = true
@@ -141,7 +140,7 @@ class Deliver: UIViewController, UITableViewDataSource, UITableViewDelegate, CLL
             print("AuthorizedAlways")
         case .authorizedWhenInUse:
             print("AuthorizedWhenInUse")
-            locationManager!.startUpdatingLocation()
+            locationManager.startUpdatingLocation()
         }
     }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -152,8 +151,8 @@ class Deliver: UIViewController, UITableViewDataSource, UITableViewDelegate, CLL
             SocketIOManager.sharedInstance.emit(event: "deliverer", message: String(describing: ["location" : ["latitude": location.coordinate.latitude, "longitude": location.coordinate.longitude]]))
         }
         map.setRegion(coordinateRegion, animated: true)
-        locationManager?.stopUpdatingLocation()
-        locationManager = nil
+//        locationManager?.stopUpdatingLocation()
+//        locationManager = nil
         map.showsUserLocation = true
     }
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

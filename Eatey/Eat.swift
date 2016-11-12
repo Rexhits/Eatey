@@ -45,7 +45,7 @@ class Eat: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
         }
     }
     
-    var locationManager: CLLocationManager?
+    let locationManager = CLLocationManager()
     var myLocation: CLLocation?
     
     override func viewDidLoad() {
@@ -54,12 +54,11 @@ class Eat: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
         containerView.layer.cornerRadius = 10.0
         containerView.layer.masksToBounds = true
         
-        locationManager = CLLocationManager()
-        locationManager!.delegate = self
+        locationManager.delegate = self
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
-            locationManager!.startUpdatingLocation()
+            locationManager.startUpdatingLocation()
         } else {
-            locationManager!.requestWhenInUseAuthorization()
+            locationManager.requestWhenInUseAuthorization()
         }
         
         pageControl.addTarget(self, action: #selector(Eat.didChangePageControlValue), for: .valueChanged)
@@ -90,7 +89,7 @@ class Eat: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
             print("AuthorizedAlways")
         case .authorizedWhenInUse:
             print("AuthorizedWhenInUse")
-            locationManager!.startUpdatingLocation()
+            locationManager.startUpdatingLocation()
         }
     }
     
@@ -126,8 +125,8 @@ class Eat: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
         self.myLocation = location
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, 1000, 1000)
         map.setRegion(coordinateRegion, animated: true)
-        locationManager?.stopUpdatingLocation()
-        locationManager = nil
+//        locationManager?.stopUpdatingLocation()
+//        locationManager = nil
         map.showsUserLocation = true
     }
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
