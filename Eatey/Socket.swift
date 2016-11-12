@@ -33,6 +33,7 @@ class SocketIOManager: NSObject {
         socket.on(username as String) { data, ack in
             print(data)
         }
+        postRequestHandler()
         
     }
     func emit(event:String, message: String) {
