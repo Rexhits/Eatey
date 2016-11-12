@@ -35,7 +35,6 @@ class Eat: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     @IBAction func startAnOrder(_ sender: Any) {
         self.view.viewWithTag(5)?.isHidden = false
         self.view.viewWithTag(10)?.isHidden = true
-        SocketIOManager.sharedInstance.emit(event: "confirmation", message: "Hello!")
 
     }
     

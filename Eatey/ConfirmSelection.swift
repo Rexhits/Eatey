@@ -16,9 +16,12 @@ class ConfirmSelection: UIViewController {
     @IBOutlet weak var confirmButton: UIButton!
     @IBOutlet weak var finalOrder: UILabel!
     
+    var superViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EatViewController")
+    
     @IBAction func confirmEatOrder(_ sender: Any) {
     //Code for sending order to Server Added here!
         let myToken = Lockbox.unarchiveObject(forKey: "Token")
+        let myUsername = Lockbox.unarchiveObject(forKey: "Username")
         let manager = AFHTTPSessionManager()
         manager.requestSerializer.setValue(myToken as! String, forHTTPHeaderField: "authorization")
         let url = "http://45.79.208.141:8000/api/order/request/"
@@ -40,6 +43,10 @@ class ConfirmSelection: UIViewController {
             print("Got Err! \(err)")
         }
         print(newEatOrder)
+        SocketIOManager.sharedInstance.emit(event: "foodRequest", message: myUsername as! String)
+        SocketIOManager.sharedInstance.postRequestHandler()
+        let controller = superViewController as! Eat
+//        controller.quitCurrentOrder
     }
     
     override func viewDidLoad() {

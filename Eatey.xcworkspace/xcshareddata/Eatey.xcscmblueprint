@@ -9,8 +9,8 @@
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "CF124374-CEFF-40ED-B97B-B73D1047E3C4",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "4ED75476FA487E9886DAC387BFC688B6306794B8" : "Eatey%202\/",
-    "5540656AD70D192E2DF5B8538C475606B986227B" : "Eatey%202\/Eatey\/"
+    "4ED75476FA487E9886DAC387BFC688B6306794B8" : "Eatey\/",
+    "5540656AD70D192E2DF5B8538C475606B986227B" : "Eatey\/Eatey\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "Eatey",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,

@@ -11,6 +11,7 @@ import Foundation
 import MapKit
 import CoreLocation
 import SwiftyJSON
+import Lockbox
 
 class Deliver: UIViewController, UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate {
     @IBOutlet weak var table: UITableView!
@@ -180,10 +181,12 @@ class Deliver: UIViewController, UITableViewDataSource, UITableViewDelegate, CLL
     
     func takingTask(mess: String) {
         SocketIOManager.sharedInstance.establishConnection()
+        let myUsername = Lockbox.unarchiveObject(forKey: "Username") as! String
         let alert = UIAlertController(title: "Confirm to deliver?", message: mess, preferredStyle: .alert)
         func okHandler(alert: UIAlertAction!) {
             // Do something...
             isTakingOrder = true
+            SocketIOManager.sharedInstance.emit(event: "confirmation", message: String(describing: [myUsername, myUsername]))
             SocketIOManager.sharedInstance.emit(event: "deliverer", message: String(describing: ["location" : ["latitude": location.coordinate.latitude, "longitude": location.coordinate.longitude]]))
             self.view.viewWithTag(15)?.isHidden = true
             self.view.viewWithTag(20)?.isHidden = false

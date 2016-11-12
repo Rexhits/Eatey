@@ -41,7 +41,7 @@ PODS:
   - FBSDKShareKit (4.16.1):
     - FBSDKCoreKit
   - Lockbox (3.0.2)
-  - Socket.IO-Client-Swift (8.0.2)
+  - Socket.IO-Client-Swift (8.1.1)
   - SwiftyJSON (3.1.1)
   - TwitterCore (2.5.0):
     - Fabric
@@ -71,7 +71,7 @@ SPEC CHECKSUMS:
   FBSDKLoginKit: 469a56cebe2e1ed62b1621d0b155970fd6aac2d8
   FBSDKShareKit: 53af0239b5bd2ebf191f32f75991245a208cc982
   Lockbox: bfc91deef886f9c0302e809a4d11e171c92c341b
-  Socket.IO-Client-Swift: 136598e4a81a42b0e6855e7f94a0e5a6efdc5ff8
+  Socket.IO-Client-Swift: 5c18fa2af9df8a19d20e4df815141103c1f7079b
   SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
   TwitterCore: 95c46af93112768a7983bd370d66023553601d01
   TwitterKit: dd8042698b0ff5bd3066fa919b3b2b50d8eed829

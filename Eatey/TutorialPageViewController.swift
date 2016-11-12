@@ -101,6 +101,7 @@ class TutorialPageViewController: UIPageViewController {
                                                          didUpdatePageIndex: index)
         }
     }
+
     
 }
 
