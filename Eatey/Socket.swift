@@ -36,9 +36,10 @@ class SocketIOManager: NSObject {
         postRequestHandler()
         
     }
-    func emit(event:String, message: String) {
+    func emit(event:String, message: SocketData) {
         self.socket.emit(event, message)
     }
+    
     
     func postRequestHandler() {
         self.socket.on("Order Taken") { data, ack in

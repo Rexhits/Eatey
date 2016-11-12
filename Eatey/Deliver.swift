@@ -22,6 +22,8 @@ class Deliver: UIViewController, UITableViewDataSource, UITableViewDelegate, CLL
     var location = CLLocation()
     var isTakingOrder = false
     var target:String = ""
+    var id: String = ""
+    
     struct Request {
         var id: String
         var expired: Bool
@@ -125,6 +127,7 @@ class Deliver: UIViewController, UITableViewDataSource, UITableViewDelegate, CLL
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         takingTask(mess: requests[indexPath.row].selectedFood)
         target = requests[indexPath.row].orderer
+        id = requests[indexPath.row].id
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -187,8 +190,7 @@ class Deliver: UIViewController, UITableViewDataSource, UITableViewDelegate, CLL
         func okHandler(alert: UIAlertAction!) {
             // Do something...
             isTakingOrder = true
-            SocketIOManager.sharedInstance.emit(event: "confirmation", message: "\(myUsername),\(target)")
-//            SocketIOManager.sharedInstance.emit(event: "deliverer", message: "\(location.coordinate.latitude),\(location.coordinate.longitude)")
+            SocketIOManager.sharedInstance.emit(event: "confirmation", message: "\(myUsername),\(target),\(id)")
             self.view.viewWithTag(15)?.isHidden = true
             self.view.viewWithTag(20)?.isHidden = false
         }
