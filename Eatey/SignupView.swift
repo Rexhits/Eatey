@@ -58,7 +58,7 @@ class SignupView: UIViewController, UITextFieldDelegate   {
             let manager = AFHTTPSessionManager()
             manager.requestSerializer.setValue("application/x-www-form-urlencoded; charset=UTF-8", forHTTPHeaderField: "Content-Type")
             let url = "http://45.79.208.141:8000/api/register/"
-            let package = ["firstname": firstNameTextField.text!, "lastname": lastNameTextField.text!, "password": passwordTextField.text!, "email": emailTextField.text!, "username": (emailTextField.text!)]
+            let package = ["firstname": firstNameTextField.text!, "lastname": lastNameTextField.text!, "password": passwordTextField.text!, "email": emailTextField.text!, "username": "\(firstNameTextField.text!)_\(lastNameTextField.text!)"]
             
             
             manager.post(url, parameters: package, progress: nil, success: { (task:URLSessionDataTask, response: Any?) in
