@@ -10,10 +10,11 @@ import UIKit
 import QuartzCore
 import AFNetworking
 import SwiftyJSON
+import Lockbox
 
 class SignupView: UIViewController, UITextFieldDelegate   {
     
-    
+
     
     override func viewDidLoad() {
         
@@ -27,7 +28,8 @@ class SignupView: UIViewController, UITextFieldDelegate   {
         self.emailTextField.delegate = self
         self.passwordTextField.delegate = self
         self.confirmPasswordTextField.delegate = self
-
+        
+        
     }
     
     @IBOutlet var errorLabel: UILabel!
@@ -52,21 +54,34 @@ class SignupView: UIViewController, UITextFieldDelegate   {
         else if !emailTextField.text!.isValidEmail() {
             errorLabel.text = "Invalid Email Address, please try another one"
         }
-        let manager = AFHTTPSessionManager()
-        manager.requestSerializer.setValue("application/x-www-form-urlencoded; charset=UTF-8", forHTTPHeaderField: "Content-Type")
-        let url = "http://45.79.208.141:8000/api/register/"
-        let package = ["firstname": firstNameTextField.text!, "lastname": lastNameTextField.text!, "password": passwordTextField.text!, "email": emailTextField.text!, "username": (firstNameTextField.text! + lastNameTextField.text!)]
-        
-        
-        manager.post(url, parameters: package, progress: nil, success: { (task:URLSessionDataTask, response: Any?) in
-            let responseJson = JSON(response as Any)
-            for (key, subJson):(String, JSON) in responseJson {
-                print("Got response! \(key, subJson)")
-            }
-//            print("Got response! \(response)")
-        }) { (task: URLSessionDataTask?, err: Error) in
+        else {
+            let manager = AFHTTPSessionManager()
+            manager.requestSerializer.setValue("application/x-www-form-urlencoded; charset=UTF-8", forHTTPHeaderField: "Content-Type")
+            let url = "http://45.79.208.141:8000/api/register/"
+            let package = ["firstname": firstNameTextField.text!, "lastname": lastNameTextField.text!, "password": passwordTextField.text!, "email": emailTextField.text!, "username": (firstNameTextField.text! + " " + lastNameTextField.text!)]
+            
+            
+            manager.post(url, parameters: package, progress: nil, success: { (task:URLSessionDataTask, response: Any?) in
+                let responseJson = JSON(response as Any)
+                for (key, subJson):(String, JSON) in responseJson {
+                    print("Got response! \(key, subJson)")
+                    if key == "token" {
+                        let token = subJson.description as NSString
+                        print("Token saved! \(Lockbox.archiveObject(token, forKey: "Token"))")
+                    } else {
+                        let username = subJson.description as NSString
+                        print("username saved! \(Lockbox.archiveObject(username, forKey: "Username"))")
+                        
+                    }
+                    
+                    self.performSegue(withIdentifier: "gotoIndexFromSignup", sender: self)
+                }
+                //            print("Got response! \(response)")
+            }) { (task: URLSessionDataTask?, err: Error) in
                 print("Got Err! \(err)")
+            }
         }
+        
     }
     
     

@@ -10,7 +10,7 @@ target 'Eatey' do
   pod 'Fabric'
   pod 'TwitterKit'
   pod 'TwitterCore'
-
+  pod 'Socket.IO-Client-Swift'
   # Pods for Eatey
 
   pod 'SwiftyJSON'

@@ -14,6 +14,7 @@ import Fabric
 import TwitterKit
 import SwiftyJSON
 import AFNetworking
+import Lockbox
 
 
 class LoginView: UIViewController, UITextFieldDelegate  {
@@ -24,6 +25,8 @@ class LoginView: UIViewController, UITextFieldDelegate  {
         
         LoginStack.layer.cornerRadius = 10.0;
         LoginStack.layer.masksToBounds = true;
+        
+//        UIApplication.shared.setStatusBarStyle(UIStatusBarStyle.lightContent, animated: true)
         
         self.usernameTextField.delegate = self
         self.passwordTextField.delegate = self
@@ -48,7 +51,7 @@ class LoginView: UIViewController, UITextFieldDelegate  {
         
         
         let fbButton = LoginButton(readPermissions: [ .publicProfile ])
-        fbButton.center=CGPoint(x:104, y:520)
+        fbButton.center=CGPoint(x:104, y:533)
         view.addSubview(fbButton)
     }
 
@@ -61,6 +64,7 @@ class LoginView: UIViewController, UITextFieldDelegate  {
     
     @IBAction func loginAct(_ sender: UIButton) {
         let manager = AFHTTPSessionManager()
+        manager.requestSerializer = AFHTTPRequestSerializer()
         manager.requestSerializer.setValue("application/x-www-form-urlencoded; charset=UTF-8", forHTTPHeaderField: "Content-Type")
         let url = "http://45.79.208.141:8000/api/login/"
         let package = ["email": usernameTextField.text!, "password": passwordTextField.text!]
@@ -69,10 +73,25 @@ class LoginView: UIViewController, UITextFieldDelegate  {
             let responseJson = JSON(response as Any)
             for (key, subJson):(String, JSON) in responseJson {
                 print("Got response! \(key, subJson)")
+                if key == "token" {
+                    let token = subJson.description as NSString
+                    print("Token saved! \(Lockbox.archiveObject(token, forKey: "Token"))")
+                } else {
+                    let username = subJson.description as NSString
+                    print("username saved! \(Lockbox.archiveObject(username, forKey: "Username"))")
+                    
+                }
+                self.performSegue(withIdentifier: "gotoIndexFromLogin", sender: self)
             }
             //            print("Got response! \(response)")
         }) { (task: URLSessionDataTask?, err: Error) in
             print("Got Err! \(err)")
+            let alert = UIAlertController(title: "Error", message: "Invalid Username/Password", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(action)
+            self.present(alert, animated: true, completion: nil)
+            
+            
         }
     }
     
@@ -89,22 +108,6 @@ class LoginView: UIViewController, UITextFieldDelegate  {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-    
-
-
-   
-
-    
-
-
-
-
-
-
-
-    
-    
-    
 
 }
 

@@ -8,78 +8,61 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>0</integer>
 		</dict>
 		<key>Bolts.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>1</integer>
 		</dict>
 		<key>FBSDKCoreKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>5</integer>
 		</dict>
 		<key>FBSDKLoginKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>6</integer>
 		</dict>
 		<key>FBSDKShareKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>7</integer>
 		</dict>
 		<key>FacebookCore.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>2</integer>
 		</dict>
 		<key>FacebookLogin.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>3</integer>
 		</dict>
 		<key>FacebookShare.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>4</integer>
 		</dict>
 		<key>Lockbox.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>8</integer>
 		</dict>
 		<key>Pods-Eatey.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>9</integer>
+		</dict>
+		<key>Socket.IO-Client-Swift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>10</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -99,7 +82,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>43B74366281D033509A0056BD378D59C</key>
+		<key>4D01554C33A8369B78C57D22506C6527</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -114,6 +97,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>765C5836FF67BC17521C634DB5BA8729</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>8329B4DD82B7A073B34A61C9527865D0</key>
 		<dict>
 			<key>primary</key>
@@ -124,12 +112,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A434F760ED1C7920796A7001329C3C14</key>
+		<key>A8F77DC39F7D0CFE46DAA5C135D96A80</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A8F77DC39F7D0CFE46DAA5C135D96A80</key>
+		<key>B7DE07C659401952501CD4B51C007FDA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
