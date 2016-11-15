@@ -9,11 +9,13 @@
 import Foundation
 import SocketIO
 import SwiftyJSON
+import Lockbox
 
 class SocketIOManager: NSObject {
     static let sharedInstance = SocketIOManager()
     
     let socket = SocketIOClient(socketURL: URL(string: "http://45.79.208.141:8000")!)
+    let myUsername = Lockbox.unarchiveObject(forKey: "Username")
     
     override init() {
         super.init()
@@ -23,6 +25,8 @@ class SocketIOManager: NSObject {
     }
     func establishConnection() {
         socket.connect()
+        
+        
     }
     func closeConnection() {
         socket.disconnect()
@@ -32,6 +36,11 @@ class SocketIOManager: NSObject {
         self.socket.onAny {print("Got event: \($0.event), with items: \($0.items)")}
         socket.on(username as String) { data, ack in
             print(data)
+        }
+        socket.on("connect") {data, ack in
+            if self.myUsername != nil {
+                self.emit(event: "user", message: String(describing: self.myUsername!))
+            }
         }
         postRequestHandler()
         

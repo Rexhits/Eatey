@@ -15,7 +15,7 @@ class ConfirmSelection: UIViewController {
 
     @IBOutlet weak var confirmButton: UIButton!
     @IBOutlet weak var finalOrder: UILabel!
-    
+    var itemQuantity = 0
     var superViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EatViewController")
     
     @IBAction func confirmEatOrder(_ sender: Any) {
@@ -25,7 +25,7 @@ class ConfirmSelection: UIViewController {
         let manager = AFHTTPSessionManager()
         manager.requestSerializer.setValue(myToken as! String, forHTTPHeaderField: "authorization")
         let url = "http://45.79.208.141:8000/api/order/request/"
-        let package = ["selectedRestaurantId": newEatOrder.selectRestaurant, "selectedFood": newEatOrder.orderItems, "destination": newEatOrder.destination, "waitingDuration": newEatOrder.demandingTimeInSec, "tips": newEatOrder.tip, "totalPrice": newEatOrder.priceInTotal + newEatOrder.tip] as [String : Any]
+        let package = ["selectedRestaurantId": newEatOrder.selectRestaurant, "selectedFood": Array(newEatOrder.orderItems[0...itemQuantity]), "destination": newEatOrder.destination, "waitingDuration": newEatOrder.demandingTimeInSec, "tips": newEatOrder.tip, "totalPrice": newEatOrder.priceInTotal + newEatOrder.tip] as [String : Any]
         
         
         manager.post(url, parameters: package, progress: nil, success: { (task:URLSessionDataTask, response: Any?) in
@@ -84,6 +84,7 @@ class ConfirmSelection: UIViewController {
             }
         }
         index -= 1
+        itemQuantity = index
         var orderItems: String = ""
         
         switch index

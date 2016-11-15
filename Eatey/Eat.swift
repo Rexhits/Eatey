@@ -69,7 +69,8 @@ class Eat: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
         pageControl.addTarget(self, action: #selector(Eat.didChangePageControlValue), for: .valueChanged)
         self.view.viewWithTag(5)?.isHidden = true
         self.view.viewWithTag(10)?.isHidden = false
-        self.map.delegate = self    }
+        self.map.delegate = self
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let tutorialPageViewController = segue.destination as? TutorialPageViewController {
@@ -78,19 +79,11 @@ class Eat: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     }
     
     func showDelivererLocation() {
-        print("CALLED")
         if !delivererlocation.isEmpty {
             droppin.coordinate.latitude = delivererlocation[0]
             droppin.coordinate.longitude = delivererlocation[1]
         }
         
-        
-//        if myLocation != nil {
-//            let center = CLLocationCoordinate2DMake((myLocation!.coordinate.latitude + delivererlocation[0]) / 2, (myLocation!.coordinate.longitude + delivererlocation[1]) / 2)
-//            let span = MKCoordinateSpanMake(abs(myLocation!.coordinate.latitude - delivererlocation[0]) + 0.01, abs(myLocation!.coordinate.longitude - delivererlocation[1]) + 0.01)
-//            let region = MKCoordinateRegionMake(center, span)
-//            map.setRegion(region, animated: true)
-//        }
     }
     
     
