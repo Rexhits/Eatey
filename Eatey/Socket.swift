@@ -56,7 +56,7 @@ class SocketIOManager: NSObject {
                     if !(alertVC.textFields?.isEmpty)! {
                         let text = alertVC.textFields![0]
                         if text.text != nil {
-                            self.emit(event: "chat", message: "\(username),\(text.text)")
+                            self.emit(event: "chat", message: "\(username),\(text.text!)")
                         }
 
                     }
@@ -79,7 +79,8 @@ class SocketIOManager: NSObject {
     
     func postRequestHandler() {
         self.socket.on("Order Taken") { data, ack in
-            print("Order Taken: \(data)")
+            print("Order Taken By: \(data[0])")
+            self.emit(event: "confirmations", message: "\(data[0] as! String),\(username)")
         }
         
         self.socket.on("deliverergo") { data, ack in
