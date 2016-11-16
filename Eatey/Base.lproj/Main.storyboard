@@ -190,6 +190,13 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sco-Ki-yrT">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DU4-gX-iY0">
+                                <rect key="frame" x="140" y="400" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="sendMessage:" destination="sYC-6d-3se" eventType="touchUpInside" id="dxu-5j-tbi"/>
+                                </connections>
+                            </button>
                             <view tag="15" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iB9-dQ-qW2">
                                 <rect key="frame" x="0.0" y="62" width="375" height="677"/>
                                 <subviews>
@@ -472,6 +479,13 @@
                                 </state>
                                 <connections>
                                     <action selector="startAnOrder:" destination="I1g-cX-uop" eventType="touchDown" id="oHd-QP-CGV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dzW-73-Uk5">
+                                <rect key="frame" x="176" y="100" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="sendMessage:" destination="I1g-cX-uop" eventType="touchUpInside" id="tfy-yh-pwv"/>
                                 </connections>
                             </button>
                             <view tag="5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LBp-ea-Yub">
@@ -1564,7 +1578,7 @@
         <image name="tips.png" width="309" height="439"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Pnf-yp-fP5"/>
-        <segue reference="mY6-0E-Ccd"/>
+        <segue reference="8Bw-4E-OqW"/>
+        <segue reference="MgH-bx-EDV"/>
     </inferredMetricsTieBreakers>
 </document>

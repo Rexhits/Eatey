@@ -105,6 +105,26 @@ class Eat: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
             locationManager.startUpdatingLocation()
         }
     }
+    @IBAction func sendMessage(_ sender: UIButton) {
+        let alertVC = UIAlertController(title: "New Message!", message: "", preferredStyle: .alert)
+        alertVC.addTextField {text in
+            text.placeholder = "Enter your message here"
+        }
+        func okHandler(alert: UIAlertAction!) {
+            // Do something...
+            print("Chat!")
+            let text = alertVC.textFields![0]
+            if text.text != nil {
+                SocketIOManager.sharedInstance.emit(event: "chat", message: text.text!)
+            }
+        }
+        let action = UIAlertAction(title: "Send", style: .default, handler: okHandler)
+        
+        let cancel = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertVC.addAction(action)
+        alertVC.addAction(cancel)
+        self.present(alertVC, animated: true, completion: nil)
+    }
     
 //    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
 //        let annotationView = MKAnnotationView()

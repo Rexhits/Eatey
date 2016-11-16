@@ -42,6 +42,33 @@ class SocketIOManager: NSObject {
                 self.emit(event: "user", message: String(describing: self.myUsername!))
             }
         }
+        
+        self.socket.on("chat") { data, ack in
+            let vc = getVisibleViewController()
+//            let text = UITextField()
+            
+            if vc != nil {
+                let alertVC = UIAlertController(title: "Got New Message!", message: String(describing: data), preferredStyle: .alert)
+                alertVC.addTextField {text in
+                    text.placeholder = "Enter your response here"
+                }
+                let action = UIAlertAction(title: "Send", style: .default, handler: { send in
+                    if !(alertVC.textFields?.isEmpty)! {
+                        let text = alertVC.textFields![0]
+                        if text.text != nil {
+                            self.emit(event: "chat", message: text.text!)
+                        }
+
+                    }
+                    
+                })
+                let cancel = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alertVC.addAction(action)
+                alertVC.addAction(cancel)
+                vc?.present(alertVC, animated: true, completion: nil)
+            }
+        }
+        
         postRequestHandler()
         
     }
@@ -54,6 +81,7 @@ class SocketIOManager: NSObject {
         self.socket.on("Order Taken") { data, ack in
             print("Order Taken: \(data)")
         }
+        
         self.socket.on("deliverergo") { data, ack in
 //            print("deliverergo: \(data)")
             let response = JSON(data as Any)
