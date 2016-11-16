@@ -113,7 +113,7 @@ class Deliver: UIViewController, UITableViewDataSource, UITableViewDelegate, CLL
             print("Chat!")
             let text = alertVC.textFields![0]
             if text.text != nil {
-                SocketIOManager.sharedInstance.emit(event: "chat", message: text.text!)
+                SocketIOManager.sharedInstance.emit(event: "chat", message: "\(username),\(text.text!)")
             }
         }
         let action = UIAlertAction(title: "Send", style: .default, handler: okHandler)
