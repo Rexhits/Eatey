@@ -32,7 +32,7 @@ class Deliver: UIViewController, UITableViewDataSource, UITableViewDelegate, CLL
         var selectedFood: String
         var restaurant: String
         var tips: Float
-        var waitingDuration: Int
+        var waitingDuration: String
         var orderer: String
         init(json: JSON) {
             let jsonID = json["_id"].string!
@@ -42,7 +42,7 @@ class Deliver: UIViewController, UITableViewDataSource, UITableViewDelegate, CLL
             let jsonSelectedFood = json["selectedFood"].string!
             let jsonResturant = json["restaurant"].string!
             let jsonTips = json["tips"].float!
-            let jsonWaitingDuration = Int(Int(json["waitingDuration"].string!)! / 1000)
+            let jsonWaitingDuration = json["expireAt"].string!
             let jsonOrderer = json["orderer"].string!
             self.id = jsonID
             self.expired = jsonExpired
