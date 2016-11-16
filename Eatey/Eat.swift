@@ -112,7 +112,6 @@ class Eat: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
         }
         func okHandler(alert: UIAlertAction!) {
             // Do something...
-            print("Chat!")
             let text = alertVC.textFields![0]
             if text.text != nil {
                 SocketIOManager.sharedInstance.emit(event: "chat", message: "\(username),\(text.text!)")

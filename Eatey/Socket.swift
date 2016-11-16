@@ -56,7 +56,7 @@ class SocketIOManager: NSObject {
                     if !(alertVC.textFields?.isEmpty)! {
                         let text = alertVC.textFields![0]
                         if text.text != nil {
-                            self.emit(event: "chat", message: text.text!)
+                            self.emit(event: "chat", message: "\(username),\(text.text)")
                         }
 
                     }
